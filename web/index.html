@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ed">
+  <meta name="description" content="A privacy-first guest check-in concept for independent homestays. Explore the demo without uploading identity documents.">
+  <title>Susegad Desk — Hosted demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">S</span><span>Susegad <b>Desk</b><small>LOCAL GUEST REGISTER</small></span></a><div class="local-pill"><i></i> Hosted demo</div></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">A calmer check-in</p><h1>Guest details,<br><em>without the paperwork.</em></h1><p class="lede">A privacy-first check-in concept for independent homestays. Try the sample register, or run the full local app on your own computer.</p></div><div class="date-card"><span>DEMO MODE</span><strong>No ID uploads</strong><small>Sample data only</small></div></section>
+    <div class="hosted-notice"><span class="notice-icon">✓</span><div><strong>This hosted preview never accepts ID photos.</strong><p>OCR runs only in the local workstation version. This page is a safe, interactive demo with fictional sample data.</p></div></div>
+    <div class="layout demo-layout">
+      <section class="card details-card"><div class="section-heading"><span class="step">01</span><div><h2>Guest details</h2><p>Try the flow with sample data or enter fictional details.</p></div></div>
+        <form id="guest-form"><div class="field-grid"><label class="field wide">Full name<input name="full_name" autocomplete="off" placeholder="e.g. Anaya Fernandes" required></label><label class="field">Age<input name="age" inputmode="numeric" placeholder="Age"></label><label class="field">ID type<input name="id_type" placeholder="Passport, other"></label><label class="field wide">Address<textarea name="address" rows="3" placeholder="Sample address"></textarea></label><label class="field wide">ID number<input name="id_number" autocomplete="off" placeholder="Leave blank in the hosted demo"></label></div>
+          <label class="check"><input id="verified" type="checkbox"> I reviewed these fictional demo details.</label>
+          <div class="action-row"><button class="button primary" type="submit" id="save" disabled>Add to demo register</button><button class="button secondary" id="sample" type="button">Load sample</button></div>
+        </form><p class="status" id="status" role="status">Entries stay in this browser tab and clear when it closes.</p>
+      </section>
+      <section class="card about-card"><div class="section-heading"><span class="step">02</span><div><h2>Private by design</h2><p>The hosted preview is for exploring the interface.</p></div></div>
+        <div class="feature-list"><div><span>01</span><p><strong>On-device OCR</strong><br>The full version uses Tesseract and Ollama on the reception computer.</p></div><div><span>02</span><p><strong>Human review</strong><br>Extracted details are suggestions and need checking before use.</p></div><div><span>03</span><p><strong>Session-only register</strong><br>Nothing here is saved to a server or database.</p></div></div>
+        <div class="local-link">Run the local version to try ID scanning. Setup steps are in the project README.</div>
+      </section>
+    </div>
+    <section class="card register-card"><div class="register-head"><div class="section-heading"><span class="step">03</span><div><h2>Demo register <span class="count" id="count">0</span></h2><p>Fictional entries stay in memory for this session.</p></div></div><button id="export" class="button secondary" type="button" disabled>↓ Export CSV</button></div><div id="empty" class="empty">No demo guests yet. Add the sample entry to explore the register.</div><div id="rows" class="rows"></div></section>
+    <footer><span>Concept prototype · Not a compliance tool</span><span>Do not enter real guest information in this hosted demo.</span><button class="text-button" id="clear-register" type="button">Clear register</button></footer>
+  </main><script src="app.js" defer></script>
+</body>
+</html>
