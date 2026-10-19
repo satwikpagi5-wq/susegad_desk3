@@ -32,7 +32,7 @@ pip install -r requirements.txt
 uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
-Open http://127.0.0.1:8000 on the reception computer. A phone on the same trusted Wi-Fi can open http://<reception-computer-lan-ip>:8000.
+Open http://127.0.0.1:8000 on the reception computer. A phone on the same trusted Wi-Fi can open the reception computer's LAN address on port 8000 (for example, http://192.168.1.20:8000).
 
 Keep the computer firewall enabled, use a private Wi-Fi network, and do not forward port 8000 to the public internet. This prototype has no authentication or TLS. If Tesseract is not on PATH, set pytesseract.pytesseract.tesseract_cmd in server.py. OCR language defaults to English; set TESSERACT_LANG to an installed language code if needed. OLLAMA_MODEL and OLLAMA_URL can override the defaults.
 
