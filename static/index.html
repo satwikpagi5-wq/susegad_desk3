@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f2eb"><title>Susegad Desk — Guest check-in</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">S</span><span>Susegad <b>Desk</b><small>LOCAL GUEST REGISTER</small></span></a><div class="local-pill"><i></i> Local workstation</div></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">A calmer check-in</p><h1>Guest details,<br><em>without the paperwork.</em></h1><p class="lede">Read an ID on this workstation, review every field, then add the guest to today’s register.</p></div><div class="date-card"><span>FRONT DESK</span><strong id="today">—</strong><small>Private workspace</small></div></section>
+    <div class="layout">
+      <section class="card capture-card"><div class="section-heading"><span class="step">01</span><div><h2>Scan an ID</h2><p>Choose a photo or take one with your device.</p></div></div>
+        <label class="dropzone" id="dropzone"><input id="file" type="file" accept="image/jpeg,image/png,image/webp" capture="environment"><span class="camera-icon">↥</span><strong>Drop an image here</strong><span>or <u>browse files</u></span><small>JPG, PNG or WebP · up to 10 MB</small></label>
+        <div id="preview-wrap" class="preview-wrap hidden"><img id="preview" alt="Selected ID image preview"><button class="text-button" id="clear-image" type="button">Remove image</button></div>
+        <div class="action-row"><button id="extract" class="button primary" type="button" disabled><span>✦</span> Read details</button><button id="demo" class="button secondary" type="button">Try sample</button></div>
+        <p class="status" id="status" role="status">Your image is processed by the local service.</p>
+      </section>
+      <section class="card details-card"><div class="section-heading"><span class="step">02</span><div><h2>Review details</h2><p>Check every value against the original ID.</p></div></div>
+        <div id="review-badge" class="review-badge hidden"><span>Review needed</span> AI suggestions can be wrong. Verify before saving.</div>
+        <form id="guest-form"><div class="field-grid"><label class="field wide">Full name<input name="full_name" autocomplete="off" placeholder="e.g. Anaya Fernandes" required></label><label class="field">Age<input name="age" inputmode="numeric" placeholder="Age"></label><label class="field">ID type<input name="id_type" placeholder="Passport, other"></label><label class="field wide">Address<textarea name="address" rows="3" placeholder="Address as shown on document"></textarea></label><label class="field wide">ID number<input name="id_number" autocomplete="off" placeholder="Enter only if required"></label></div>
+          <label class="check"><input id="verified" type="checkbox"> I checked these details against the original document.</label>
+          <button class="button primary save-button" type="submit" disabled id="save">Add to today’s register</button>
+        </form>
+      </section>
+    </div>
+    <section class="card register-card"><div class="register-head"><div class="section-heading"><span class="step">03</span><div><h2>Today’s register <span class="count" id="count">0</span></h2><p>Held in memory for this session. Export before closing.</p></div></div><button id="export" class="button secondary" type="button" disabled>↓ Export CSV</button></div><div id="empty" class="empty">No guests added yet. Verified entries will appear here.</div><div id="rows" class="rows"></div></section>
+    <footer><span>Designed for private, on-site use.</span><span>Nothing is uploaded to a cloud service.</span><button class="text-button" id="clear-register" type="button">Clear register</button></footer>
+  </main><script src="app.js" defer></script>
+</body></html>
